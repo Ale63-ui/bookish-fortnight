@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta Elizabeth</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom, #f5f5f5, #eae8e4);
+      color: #333;
+      cursor: url('https://www.flaticon.es/icono-gratis/corona_6941697?term=corona&page=1&position=4&origin=search&related_id=6941697'), auto; /* Cursor personalizado */
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Fondo detrás del contenido */
+      top: 0;
+      left: 0;
+    }
+
+    header {
+      text-align: center;
+      background: linear-gradient(90deg, #6200ea, #d16ba5);
+      background-size: 400% 400%;
+      animation: gradientAnimation 8s infinite;
+      color: white;
+      padding: 30px 20px;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #ddd;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      background: white;
+      padding: 40px;
+      box-shadow: 0 8px 20px rgba(163, 24, 213, 0.63);
+      border-radius: 12px;
+      text-align: justify; /* Justificar texto */
+    }
+
+    .container h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #be21ea;
+    }
+
+    .container p {
+      line-height: 1.8;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .container p strong {
+      font-weight: bold;
+    }
+
+    .signature {
+      margin-top: 30px;
+      text-align: right;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #2a2b2d;
+    }
+
+    .songs-container {
+      max-width: 1000px;
+      margin: 50px auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(173, 15, 209, 0.1);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #2a2b2d;
+    }
+
+    .card h3 .highlight {
+      color: #d16ba5; /* Rosa-morado */
+    }
+
+    .card p {
+      margin: 10px 0;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .card iframe {
+      margin-top: 10px;
+      width: 100%;
+      height: 80px;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    footer a {
+      color: #2a2b2d;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 768px) {
+      .songs-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    .card {
+  width: 18rem;
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: #5c6bc0;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #3949ab;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Contenedor de partículas -->
+  <div id="particles-js"></div>
+
+  <header>
+    <h1>Carta para ti</h1>
+    <p>Una carta hecha y diseñada especialmente para ti, una carta unica como tu, y un sentimiento que solo contigo puedo expresar</p>
+  </header>
+
+  <div class="container">
+    <h2>Para mi Lizzy,</h2>
+    <p>
+        Me dijiste un día que querías que te hiciera una carta para tu cumpleaños pero no una carta de felicitaciones o de amor o de esos sentimientos, sino una carta que saliera del alma hacia ti, lamentablemente no pude acabarla a tiempo, mucho menos habértela entregado días pasados. Sin embargo, el día de hoy quiero mandarte estas palabras, me hubiera gustado hacerlo mas bonito y de cierta forma festejar tu cumpleaños de una manera única y bonita, pero bueno, dentro de todo lo que quiero decirte, te diré las cosas mas importantes que creo yo que puedo decir.
+
+        <br><br>Eres una gran persona para mi, dentro de todas las cosas que han pasado dentro de mis 21 años, el conocerte fue un momento muy importante para mi, no solo fuiste o eres una gran amiga para mi, también fuiste mi mejor amiga y mi novia durante un tiempo, y es algo con lo que vivo, recordándote esos bonitos momentos que vivimos juntos, te juro que hay veces que sigo viendo fotos del pasado, o veces que mi mente se pone a recordar y sonrío porque siempre serás una parte fundamental e importante en toda mi vida.
+        
+        <br><br>Eres una niña preciosa, esos momentos en donde actuabas como niña chiquita me fascinaba, me encantaba, porque esa esencia es la que cada persona tiene que tener y nunca dejarla ir, uno va creciendo a través de los años, cada día aprendemos cosas nuevas pero también cada día crecemos un poco mas, nos hacemos viejos cada minuto, cada hora, cada día que pasa y lo que quiero decir con todo esto es que no dejes de tener esa escencia de niña chiquita, porque te hace única.
+
+        <br><br>Eres una mujer muy capaz de todo, se que hay cosas que son mas difíciles que otras, cosas que intentamos por hacer y no se puede a la primera o incluso pensamos que es imposible, cosas emocionales que pensamos que no podemos soportar, o cosas que pasan en la vida que nos hace que nos preguntemos ¿Por qué a nosotros? pero todo eso es parte del crecimiento de todo ser humano, hay cosas que quiza no estén diseñadas para nosotros y otras que nos encajan a la perfección, al final es parte de una adaptación que tenemos que llevar acabo, con todo esto quiero decirte que hay veces que tenemos que abandonar ciertas cosas que simplemente no son para nosotros y hay otras cosas que tenemos que luchar por ello, lo difícil es identificar por cuales cosas vale la pena luchar y por cuales otras vale la pena abandonar.
+    
+        <br><br>Lo que quiero que entiendas es que, aunque la vida nos presenta momentos complejos, esos son los que más nos enseñan. A veces nos enfrentamos a obstáculos que parecen insuperables, pero es precisamente en esos momentos cuando descubrimos de qué estamos hechos. Quizás no siempre podremos cambiar las circunstancias, pero sí podemos elegir cómo reaccionar ante ellas. La clave está en mantener una actitud positiva y aprender a navegar por las dificultades con la cabeza en alto, porque con cada desafío que superamos, nos volvemos más fuertes, más sabios.
+
+        <br><br>Recuerdo todos esos momentos compartidos, las conversaciones largas hasta la madrugada, las risas, las miradas que decían más que mil palabras. Esos momentos se quedan en mi memoria, y aunque el tiempo pase, aunque las circunstancias cambien, esas experiencias no se borran. Al contrario, se quedan guardadas en un rincón especial de mi corazón, y cada vez que pienso en ti, esas memorias cobran vida. Me enseñaste mucho más de lo que imaginas, y por eso siempre te estaré agradecido.
+
+        <br><br>Lo que más valoro de ti es esa capacidad para mantenerte fiel a ti misma, para no perder esa esencia que te hace única. En un mundo lleno de presiones y expectativas, seguir siendo quien eres es una de las cualidades más hermosas que puedes tener. Nunca dejes que nada ni nadie te haga perder esa luz que tu tienes, porque es la que hace que tu presencia sea tan especial. La vida, con todos sus altibajos, sigue su curso, pero siempre te deseo que sigas adelante con esa fuerza que te caracteriza, sin perder nunca la esencia de la niña que un día fuiste y que sigue siendo parte de ti.
+    
+        <br><br>Quizás no siempre supe cómo expresarme en el momento adecuado, ni cómo mostrarte lo que significabas para mí de la manera que realmente quería, pero con el tiempo he aprendido a valorarte aún más, no solo por lo que compartimos, sino por lo que me enseñaste. A través de todo, descubrí que el amor no se trata solo de los momentos felices, sino también de los desafíos, de aprender a ser mejores, incluso cuando las cosas no salieron como esperábamos. Y, aunque ya no estamos juntos, cada uno sigue con su propio camino, esos aprendizajes siguen conmigo y sé que de alguna manera, ese crecimiento es algo que también llevas contigo.
+
+        <br><br>Miro hacia atrás y me doy cuenta de que lo que tuvimos fue más que una relación, fue una etapa de vida. Fuiste la persona que, en ese momento, me ayudó a comprender muchas cosas sobre mí mismo, sobre el amor, sobre el crecimiento personal. Aunque ahora el tiempo nos haya separado, siempre recordaré esos días con cariño, con gratitud, porque me enseñaste a ver el mundo desde una perspectiva diferente, una en la que aprendí a ser más honesto conmigo mismo, a valorar más los pequeños momentos y a entender que, incluso cuando las cosas terminan, las huellas que dejan en nosotros nunca se borran.
+        
+        <br><br>Sé que ambos hemos cambiado y crecido desde que nuestras vidas tomaron rumbos distintos, y aunque ahora las circunstancias son diferentes, mi respeto hacia ti sigue siendo el mismo. Quiero que sepas que siempre te desearé lo mejor, que mi apoyo estará presente, aunque sea desde la distancia. A veces la vida nos lleva por caminos inesperados, pero eso no significa que lo que compartimos no haya tenido su importancia. Lo que vivimos fue real, y siempre tendrá un espacio especial en mi corazón, sin importar qué tan lejos lleguemos.
+
+        <br><br>Tu capacidad de amar y entregarte a las cosas que te apasionan es algo que siempre he admirado profundamente en ti. Esa combinación de ternura y dedicación que tienes, que pocas personas poseen, es lo que te hace especial. Tienes una forma de ver el mundo con esa chispa que te hace única, y, aunque a veces el perfeccionismo te pesa, te diría que no pierdas esa búsqueda de la excelencia, porque es lo que hace que brilles, lo que te empuja a ser mejor cada día. Eres una persona capaz de grandes cosas, solo necesitas recordar siempre que el proceso lleva tiempo, y no todo debe ser perfecto para ser valioso.
+
+        <br><br>Sé que las circunstancias no siempre han sido fáciles, que has enfrentado muchos desafíos en tu camino. A veces la vida se torna complicada y todo parece más pesado de lo que realmente es, pero quiero que sepas que todo lo que vives, aunque ahora lo sientas abrumador, es solo una parte de tu proceso de crecimiento. No tienes que tener todas las respuestas de inmediato, ni tener todo resuelto de forma instantánea. El tiempo tiene una forma especial de aclarar las cosas, y sé que lo que estás viviendo ahora te llevará a un lugar mejor. La paciencia, esa virtud que a veces cuesta tanto mantener, será tu aliada. Tienes una fuerza que a veces no reconoces, pero que es impresionante.
+
+        <br><br>Sabes perfectamente que me gusta estudiar y que cuando aprendo algo y lo comprendo no puedo sacarlo de la cabeza, se que en cierta forma te gustaba eso de mi, entonces despues de todo lo que he dicho en esta carta quiero escribir ahora un poco de cosas que he aprendido a lo largo de este tiempo que hemos estado separados, todo lo que puedo empezar a escribir son cosas que he aprendido para ayudar a mas personas, incluyendote a ti. Un tiempo creí que el siempre estar pensando cosas era una debilidad y un castigo pero he aprendido que no tiene que ser asi, ya que desde mi inteligencia puedo apoyar a personas importantes en mi vida.
+    
+        <br><br>Puedo decirte que nuestro cerebro tiene la increíble capacidad de reconfigurarse. A través de lo que se llama "plasticidad cerebral", podemos aprender, adaptarnos y crear nuevos caminos neuronales que nos permiten ser mejores cada día, incluso cuando nos enfrentamos a retos que parecen insuperables. Esto se logra mediante la constancia y la repetición, algo que, aunque a veces puede parecer pequeño o insignificante, tiene un impacto profundo en nuestra forma de ser y de enfrentar el mundo. Y tú, aunque no lo creas siempre, estás en un proceso constante de aprendizaje y transformación, solo que no siempre tienes la visibilidad de lo lejos que has llegado. La clave está en confiar en el proceso, porque cada paso que das, por pequeño que sea, te acerca más a esa versión de ti misma que todavía está por descubrir.
+        Además, es importante que sepas que la ansiedad y la incertidumbre que a veces sientes son respuestas naturales de nuestro sistema nervioso frente a situaciones que percibimos como amenazantes. El ser humano está diseñado para sentir miedo o inseguridad cuando se enfrenta a lo desconocido, y eso no es un defecto, sino una herramienta evolutiva. Sin embargo, la forma en que gestionamos esas emociones puede ser aprendida. Técnicas como la atención plena (mindfulness) y la regulación emocional nos permiten enfrentarlas de manera más efectiva, tomando el control de nuestros pensamientos y emociones, en lugar de dejarnos arrastrar por ellas. Tú tienes la capacidad de aprender a manejar esos momentos de duda con calma y con una visión clara de lo que deseas. Es solo cuestión de tiempo y paciencia, de no permitir que las emociones, por más intensas que sean, tomen las riendas de tu vida.
+    
+        <br><br>A veces, en los momentos más difíciles, nuestras emociones nos llevan a tomar decisiones que parecen correctas en ese instante, pero que con el tiempo descubrimos que no lo eran. Es por eso que quiero recordarte algo muy importante: no tomes decisiones permanentes a causa de emociones temporales. Las emociones son como las olas del mar: pueden ser fuertes, impredecibles y hasta avasalladoras, pero eventualmente siempre se calman. Tómate el tiempo necesario para respirar, para reflexionar y para decidir desde un lugar de calma, porque dentro de ti está esa capacidad de encontrar claridad, incluso en medio del caos. Eres mucho más fuerte de lo que a veces te das crédito, y estoy seguro de que cada paso que des, si lo haces desde el amor hacia ti misma, será el correcto.
+    
+        <br><br>Espero que este día, más allá de ser una fecha en el calendario, sea un recordatorio de lo valiosa que eres. Que te tomes un momento para celebrar no solo todo lo que has logrado, sino también todo lo que eres, incluso con las partes de ti que aún estás trabajando en mejorar. Porque el crecimiento no es lineal, y eso está bien. Nunca dejes de ser esa persona apasionada, tierna y única que siempre me ha inspirado. Y aunque mis palabras quizá no puedan expresar del todo lo que siento, quiero que sepas que, desde el fondo de mi corazón, te deseo lo mejor en esta nueva vuelta al sol. Feliz cumpleaños. Que este año esté lleno de momentos que te acerquen más a tus sueños y a la paz que tanto mereces. Te repito que no encuentro todas las palabras para expresarte todo lo que llegue a sentir por ti o que incluso sigo sintiendo, es por eso que en la parte de abajo te deje una serie de canciones que creo que son importante que escuches ya que expresan mas cosas de las que no puedo decir con palabras. 
+
+        <br><br>Te quiero mi pequeña, mi conejita, mi princesa y mi niña bonita. Cuidate. Te deseo lo mejor en todo. Felices 20 años.
+    </p>
+    <p>
+      <strong>Gracias por ser quien eres.</strong> Tu presencia en mi vida significa más de lo que las palabras pueden expresar.
+    </p>
+
+    <div class="signature">
+      Con cariño y amor,  
+      <br>  
+      Alejandro Durán
+    </div>
+  </div>
+
+  <footer>
+    Diseñado con ❤️ por <a href="#">El hombre que siempre te va a amar</a>
+  </footer>
+
+  <script>
+    // Configuración de partículas
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 50 },
+        color: { value: '#d16ba5' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.5 },
+        size: { value: 4 },
+        move: { speed: 1 }
+      }
+    });
+
+    // Animación al hacer scroll
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll('.card');
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      cards.forEach(card => observer.observe(card));
+    });
+  </script>
+</body>
+</html>
+
+
